@@ -1,5 +1,5 @@
 import man from '../assets/man.png';
-import food from '../assets/food.jpg';
+import food from '../assets/Food.jpg';
 import temu from '../assets/temu.jpg';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import React, { useEffect, useState } from 'react';
