@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                   // modern Node.js features
+    "module": "CommonJS",                 // required for Vercel serverless
+    "moduleResolution": "node",
+    "esModuleInterop": true,              // allows default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"],                     // includes Node.js types
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "include": ["*.ts", "api/**/*.ts"]
+}
