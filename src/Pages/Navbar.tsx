@@ -13,8 +13,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 shadow-md">
-      <div className="w-[80%] mx-auto flex justify-between items-center h-16 px-6 text-white">
+    <nav className="fixed w-full h-16 top-0 z-50 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 shadow-md">
+      <div className="w-full md:w-[80%] mx-auto flex justify-between items-center h-16 px-6 text-white">
         {/* Logo / Name */}
         <h1 className="text-2xl font-bold tracking-wide">
           <span className="text-blue-200">Seyi</span>Dev
@@ -41,6 +41,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
+        
         {nav && (
           <ul className="absolute top-16 left-0 w-full bg-gradient-to-b from-blue-800 to-blue-500 flex flex-col items-center space-y-6 py-6 text-lg md:hidden">
             {links.map(({ id, path, name }) => (
@@ -57,7 +58,9 @@ const Navbar = () => {
           </ul>
         )}
       </div>
+      
     </nav>
+    
   );
 };
 

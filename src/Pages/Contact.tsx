@@ -55,7 +55,7 @@ function Contact() {
 
   return (
     <section
-      className="px-6 py-12 mt-10 bg-gray-100 text-gray-800 flex flex-col items-center"
+      className="px-6 py-12 min-h-screen mt-10 bg-gray-100 text-gray-800 flex flex-col items-center"
     >
       <div className="max-w-3xl w-full">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Me</h2>
@@ -116,7 +116,7 @@ function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition"
+            className="w-full h-[70px] bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition"
           >
             Send Message
           </button>

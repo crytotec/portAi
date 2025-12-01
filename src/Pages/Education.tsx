@@ -2,14 +2,14 @@ function Education() {
   return (
     <section
       id="education"
-      className="px-6 py-12 mt-10 bg-white text-gray-800 flex flex-col items-center"
+      className="px-6 min-h-screen py-12 mt-10 bg-white text-gray-800 flex flex-col items-center"
     >
       <div className="max-w-4xl w-full">
         <h2 className="text-3xl font-bold text-center mb-6">Education</h2>
 
         <div className="space-y-6">
           {/* University */}
-          <div className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+          <div className="bg-gray-50 h-auto  md:h-[200px] p-6 rounded-2xl shadow-md hover:shadow-lg transition">
             <h4 className="text-xl font-semibold text-blue-700">
               Ladoke Akintola University of Technology (LAUTECH)
             </h4>
@@ -25,7 +25,7 @@ function Education() {
           </div>
 
           {/* Web Development Certifications */}
-          <div className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+          <div className="bg-gray-50 h-auto  md:h-[200px] p-6 rounded-2xl shadow-md hover:shadow-lg transition">
             <h4 className="text-xl font-semibold text-blue-700">
               Front-End Web Development Certifications
             </h4>
