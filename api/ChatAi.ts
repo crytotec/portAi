@@ -1,6 +1,8 @@
 import { InferenceClient } from "@huggingface/inference";
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import dotenv from "dotenv";
 
+dotenv.config(); //
 const hf = new InferenceClient(process.env.HUGGING_KEY_API!);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
