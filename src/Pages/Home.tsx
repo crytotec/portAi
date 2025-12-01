@@ -166,13 +166,9 @@ const sendMessageToAI = async () => {
 
         <div className='relative'>
           <img src={man} className='object-cover  w-full h-full' />
-          <div className='absolute inset-0 rounded-2xl -z-10 bg-gradient-to-b from-blue-300 to-red-500 w-full h-[20] ' />
+          <div className='absolute inset-0 rounded-2xl -z-10 bg-gradient-to-b from-blue-300 to-red-500 w-full h-full ' />
         </div>
       </div>
-
-      {/* ================================ */}
-      {/* The rest of your code (About, Projects, Tech Stack, Experience, Contact Form) remains exactly as is */}
-      {/* ================================ */}
 
       <div className="relative flex  flex-col md:flex-row justify-between items-center mx-auto gap-10 p-5 w-full md:w-[80%]  h-auto">
         <div className='absolute  z-10 bg-gradient-to-r left-0  bottom-0 from-blue-800 to-transparent w-[100px] h-full' />
