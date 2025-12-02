@@ -114,6 +114,7 @@ function Home() {
 
   return (
     <div className="w-full mt-20">
+      
       <div className="relative flex flex-col md:flex-row p-5 justify-between items-center mx-auto gap-10 w-full md:w-[80%] h-auto">
         <div className='absolute pointer-events-none z-10 bg-gradient-to-t bottom-0 from-blue-800 to-transparent w-full h-[200px] md:h-[300px] lg:h-[400px]' />
         <div className='flex flex-col gap-10'>

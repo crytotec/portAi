@@ -7,7 +7,7 @@ function About() {
         navigate('/#projects')
     }
   return (
-    <section id="about" className="px-6 max-h-screen py-12 mt-10 bg-gray-100 text-gray-800">
+    <section id="about" className="px-6 min-h-screen py-12 mt-10 bg-gray-100 text-gray-800">
       <div className="flex flex-col h-auto md:h-[500px]  max-w-4xl  mx-auto">
         <h2 className="text-3xl font-bold text-center mb-6">About Me</h2>
         <h5 className="text-lg leading-relaxed text-center mb-8">
