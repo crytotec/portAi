@@ -134,7 +134,7 @@ function Home() {
             <div className='absolute inset-0 -z-10 bg-gradient-to-r from-blue-300 to-transparent w-[80%] h-full' />
 
            {chatOpen && (
-               <div className="absolute top-[110%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[400px] bg-white rounded-xl shadow-lg flex flex-col z-50">
+               <div className="mt-4 w-[90%] max-w-[400px] mx-auto bg-white rounded-xl shadow-lg flex flex-col z-50">
                 <div className="p-4 flex-1 flex flex-col gap-2 max-h-80 overflow-y-auto">
                   {aiMessages.map((msg, idx) => (
                     <div key={idx} className={`p-2 rounded-lg ${msg.role === 'user' ? 'bg-blue-100 self-end' : 'bg-gray-200 self-start'}`}>
