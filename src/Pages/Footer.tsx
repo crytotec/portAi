@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-red-600 via-blue-700 to-blue-900 text-white py-8 mt-10 rounded-t-3xl shadow-lg">
+    <footer className="w-full bg-white/15 text-white py-8 mt-10 rounded-t-3xl shadow-lg">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Left Section */}
         <h2 className="text-lg font-semibold mb-4 md:mb-0 text-center md:text-left">

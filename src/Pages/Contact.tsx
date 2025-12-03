@@ -55,7 +55,7 @@ function Contact() {
 
   return (
     <section
-      className="px-6 py-12 min-h-screen mt-10 bg-gray-100 text-gray-800 flex flex-col items-center"
+      className="px-6 py-12 h-auto mt-10 bg-gray-300 text-gray-800 flex flex-col items-center"
     >
       <div className="max-w-3xl w-full">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Me</h2>

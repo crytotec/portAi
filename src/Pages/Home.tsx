@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 
+
 interface formProps {
   name: string,
   email: string,
@@ -114,53 +115,78 @@ function Home() {
 
   return (
     <div className="w-full mt-20">
-      
-      <div className="relative flex flex-col md:flex-row p-5 justify-between items-center mx-auto gap-10 w-full md:w-[80%] h-auto">
-        <div className='absolute pointer-events-none z-10 bg-gradient-to-t bottom-0 from-blue-800 to-transparent w-full h-[200px] md:h-[300px] lg:h-[400px]' />
-        <div className='flex flex-col  gap-10'>
-          <h1>Hi, <span className='text-blue-300'>I’m Seyi Oladimeji </span>👋</h1>
-          <p> A Web Developer integrating <span className="font-semibold text-blue-300">AI</span> into modern web experiences.</p>
-          <a href='#projects' className="flex items-center justify-center px-6 py-3 h-[50px] bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-300 duration-300 transition">
-            View My Work
-          </a>
-          <div className='relative inline-block'>
-            <button
-              onClick={() => setChatOpen(!chatOpen)}
-              className="relative z-20 px-6 py-3 border border-blue-300 text-white rounded-xl hover:bg-red-600 hover:text-white duration-300 w-full h-[50px] transition"
-            >
-              Chat With My AI 🤖
-            </button>
+       <div className="relative flex flex-col md:flex-row p-5 justify-between items-center mx-auto gap-10 w-full md:w-[80%] h-auto">
+ 
+    <div className="relative flex flex-col gap-10">
+      <h1>Hi, <span className='text-blue-300'>I’m Seyi Oladimeji </span>👋</h1>
+      <p>
+        A Web Developer integrating <span className="font-semibold text-blue-300">AI</span> 
+        into modern web experiences.
+      </p>
 
-            <div className='absolute inset-0 -z-10 bg-gradient-to-r from-blue-300 to-transparent w-[80%] h-full' />
+      <a
+        href="#projects"
+        className="flex items-center justify-center px-6 py-3 h-[50px] bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-300 duration-300 transition"
+      >
+        View My Work
+      </a>
 
-           {chatOpen && (
-               <div className="relative top-[110%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[400px] bg-white rounded-xl shadow-lg flex flex-col z-50">
-                <div className="p-4 flex-1 flex flex-col gap-2 max-h-80 overflow-y-auto">
-                  {aiMessages.map((msg, idx) => (
-                    <div key={idx} className={`p-2 rounded-lg ${msg.role === 'user' ? 'bg-blue-100 self-end' : 'bg-gray-200 self-start'}`}>
-                      {msg.content}
-                    </div>
-                  ))}
-                  {loading && <div className="p-2 bg-gray-100 rounded-lg self-start">AI is typing...</div>}
+      <div className="relative inline-block">
+        <button
+          onClick={() => setChatOpen(!chatOpen)}
+          className="relative z-20 px-6 py-3 border border-blue-300 text-white rounded-xl hover:bg-red-600 hover:text-white duration-300 w-full h-[50px] transition"
+        >
+          Chat With My AI 🤖
+        </button>
+
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-300 to-transparent w-[80%] h-full" />
+
+        {chatOpen && (
+          <div className="relative top-[110%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[400px] bg-white rounded-xl shadow-lg flex flex-col z-50">
+            <div className="p-4 flex-1 flex flex-col gap-2 max-h-80 overflow-y-auto">
+              {aiMessages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`p-2 rounded-lg ${msg.role === "user"
+                    ? "bg-blue-100 self-end"
+                    : "bg-gray-200 self-start"
+                    }`}
+                >
+                  {msg.content}
                 </div>
+              ))}
 
-                <form onSubmit={(e) => { e.preventDefault(); sendMessageToAI() }} className="p-2 border-t border-gray-300 flex gap-2">
-                  <input
-                     value={userMessage}
-                    onChange={(e) => setUserMessage(e.target.value)}
-                    placeholder="Type your message..."
-                    className="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none"
-                  />
-                  <button className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-lg">
-                    Send
-                  </button>
-                </form>
-              </div>
-            )}
+              {loading && (
+                <div className="p-2 bg-gray-100 rounded-lg self-start">
+                  AI is typing...
+                </div>
+              )}
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                sendMessageToAI();
+              }}
+              className="p-2 border-t border-gray-300 flex gap-2"
+            >
+              <input
+                value={userMessage}
+                onChange={(e) => setUserMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none"
+              />
+
+              <button className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-lg">
+                Send
+              </button>
+            </form>
           </div>
-        </div>
+        )}
+      </div>
+    </div>
 
-        
+
         <div className='relative w-full md:w-[400px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]'>
           <img src={man} className='object-cover w-full h-full rounded-2xl' />
           <div className='absolute inset-0 rounded-2xl -z-10 bg-gradient-to-b from-blue-300 to-red-500 w-full h-full ' />
@@ -168,10 +194,10 @@ function Home() {
       </div>
 
       {/* About Me Section */}
-      <div className="relative flex flex-col md:flex-row justify-between items-center mx-auto gap-10 p-5 w-full md:w-[80%] h-auto">
-        <div className='absolute z-10 bg-gradient-to-r left-0 bottom-0 from-blue-800 to-transparent w-[100px] h-full' />
-        <div className='absolute z-10 bg-gradient-to-l right-0 bottom-0 from-blue-800 to-transparent w-[100px] h-full' />
-        <div className='w-full min-h-[400px] bg-gradient-to-l pb-4 from-blue-700 to-blue-300 rounded-2xl'>
+      <div className="relative mt-4 flex flex-col md:flex-row justify-between items-center mx-auto gap-10 p-5 w-full md:w-[80%] h-auto">
+       
+       
+        <div className='w-full min-h-[400px] bg-gradient-to-l pb-4 from-blue/5 to-blue-300 rounded-2xl'>
           <div className='flex flex-col justify-between items-center mx-auto gap-10 p-10'>
             <h1>About Me</h1>
             <p>I’m a passionate Web Developer with a background in Anatomy, blending creativity and logic to build interactive, AI-powered, and scalable digital experiences. I enjoy using tools like React, TypeScript, Tailwind CSS, and Firebase to craft responsive websites that feel alive.</p>
@@ -206,9 +232,9 @@ function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="relative flex flex-col items-center justify-center w-full md:w-[80%] mx-auto mt-16 px-4 md:px-8 py-16">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-900 via-blue-700 to-red-600 opacity-90 rounded-3xl shadow-2xl min-h-[300px] md:min-h-[400px]" />
-        <h2 id='projects' className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">
+      <div className="relative flex flex-col items-center  bg-gradient-to-r from-blue-10 to-blue-400 justify-center w-full md:w-[80%] mx-auto mt-5 px-4 md:px-8 py-16">
+        <div className="absolute inset-0 -z-10  opacity-90 rounded-3xl shadow-2xl min-h-[300px] md:min-h-[400px]" />
+        <h2 id='projects' className="text-2xl font-bold text-white mb-10 text-center">
           My <span className="text-red-400">Projects</span>
         </h2>
         <h3 className="text-white mb-6">Some of my works</h3>
@@ -242,9 +268,9 @@ function Home() {
 
 
 {/* Tech Stack Section */}
-<div className="w-full md:w-[80%] py-16 min-h-[400px] bg-gradient-to-r from-red-900 via-blue-700 to-blue-800 text-white flex flex-col mx-auto mt-5 items-center rounded-2xl">
-  <h2 className="text-3xl font-bold mb-8 text-center">Tech Stack</h2>
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
+<div className="w-full md:w-[80%] py-16 min-h-[400px} text-white flex flex-col mx-auto mt-5 items-center rounded-2xl">
+  <h2 className="text-2xl font-bold mb-8 text-center">Tech Stack</h2>
+  <div className="grid grid-cols-2 w-[90%] sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
     {[
       { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" },
       { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" },
@@ -255,7 +281,7 @@ function Home() {
     ].map((skill, index) => (
       <div
         key={index}
-        className="flex flex-col items-center bg-white/5 p-5 rounded-2xl hover:bg-white/10 transition duration-300"
+        className="flex flex-col items-center bg-white/15 p-5 rounded-2xl hover:bg-white/10 transition duration-300"
       >
         <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-3" />
         <p className="font-medium">{skill.name}</p>
@@ -263,10 +289,9 @@ function Home() {
     ))}
   </div>
 </div>
-
 {/* Experience & Education Section */}
 <div className="w-full md:w-[80%] mx-auto mt-5 py-16 min-h-[450px] bg-gradient-to-l from-gray-700 via-red-800 to-blue-600 text-white flex flex-col items-center rounded-2xl">
-  <h2 className="text-3xl font-bold mb-10 text-center">Experience & Education</h2>
+  <h2 className="text-2xl font-bold mb-10 text-center">Experience & Education</h2>
   <div className="flex flex-col md:flex-row gap-10 w-[90%] md:w-[80%]">
     {/* Experience */}
     <div className="flex-1">
@@ -298,8 +323,8 @@ function Home() {
 </div>
 
 {/* Contact Section */}
-<div className="relative flex flex-col items-center justify-center w-full md:w-[80%] mx-auto py-20 px-6 md:px-10 min-h-[500px] bg-gradient-to-r from-red-600 via-blue-700 to-blue-900 text-white rounded-t-3xl mt-16">
-  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Contact Me</h2>
+<div className="relative flex flex-col items-center justify-center w-full md:w-[80%] mx-auto py-20 px-6 md:px-10 min-h-[500px] bg-white/15 text-white rounded-t-3xl mt-16">
+  <h2 className="text-2xl  font-bold mb-4 text-center">Contact Me</h2>
   <p className="text-center text-gray-200 max-w-xl mb-10">
     Interested in working together or have a question? Feel free to reach out.
   </p>

@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="w-full md:w-[80%] mx-auto flex justify-between items-center h-16 px-6 text-white">
         {/* Logo / Name */}
         <h1 className="text-2xl font-bold tracking-wide">
-          <span className="text-blue-200">Seyi</span>Dev
+          <span className="text-blue-200">Cryto</span>TEC
         </h1>
 
         {/* Desktop Links */}
