@@ -117,7 +117,7 @@ function Home() {
       
       <div className="relative flex flex-col md:flex-row p-5 justify-between items-center mx-auto gap-10 w-full md:w-[80%] h-auto">
         <div className='absolute pointer-events-none z-10 bg-gradient-to-t bottom-0 from-blue-800 to-transparent w-full h-[200px] md:h-[300px] lg:h-[400px]' />
-        <div className='flex flex-col gap-10'>
+        <div className='flex flex-col  gap-10'>
           <h1>Hi, <span className='text-blue-300'>I’m Seyi Oladimeji </span>👋</h1>
           <p> A Web Developer integrating <span className="font-semibold text-blue-300">AI</span> into modern web experiences.</p>
           <a href='#projects' className="flex items-center justify-center px-6 py-3 h-[50px] bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-300 duration-300 transition">
@@ -131,10 +131,10 @@ function Home() {
               Chat With My AI 🤖
             </button>
 
-            <div className='absolute inset-0 -z-10 bg-gradient-to-r from-blue-300 to-transparent w-full h-full' />
+            <div className='absolute inset-0 -z-10 bg-gradient-to-r from-blue-300 to-transparent w-[80%] h-full' />
 
             {chatOpen && (
-              <div className="mt-4 w-full md:w-[400px] bg-white rounded-xl shadow-lg flex flex-col z-50 relative">
+              <div className="mt-4 w-[95%] max-w-[400px] mx-auto bg-white rounded-xl shadow-lg flex flex-col z-50 relative">
                 <div className="p-4 flex-1 flex flex-col gap-2 max-h-80 overflow-y-auto">
                   {aiMessages.map((msg, idx) => (
                     <div key={idx} className={`p-2 rounded-lg ${msg.role === 'user' ? 'bg-blue-100 self-end' : 'bg-gray-200 self-start'}`}>
