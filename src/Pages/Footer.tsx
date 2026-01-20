@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white/15 text-white py-8 mt-10 rounded-t-3xl shadow-lg">
+    <footer className="w-full bg-gray-900 text-white py-8 mt-10 rounded-t-3xl shadow-inner">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Left Section */}
         <h2 className="text-lg font-semibold mb-4 md:mb-0 text-center md:text-left">
@@ -15,7 +15,7 @@ const Footer = () => {
             href="https://github.com/crytotec"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-400 transition-colors duration-300"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaGithub size={24} />
           </a>
@@ -24,7 +24,7 @@ const Footer = () => {
             href="https://linkedin.com/in/seyioladimeji790"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-400 transition-colors duration-300"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaLinkedin size={24} />
           </a>
@@ -33,14 +33,14 @@ const Footer = () => {
             href="https://twitter.com/crytotec"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-400 transition-colors duration-300"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaTwitter size={24} />
           </a>
 
           <a
             href="mailto:seyioladimeji790@gmail.com"
-            className="hover:text-red-400 transition-colors duration-300"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaEnvelope size={24} />
           </a>
@@ -50,8 +50,8 @@ const Footer = () => {
       {/* Back to Top */}
       <div className="text-center mt-6">
         <a
-          href="#top"
-          className="text-sm text-white hover:text-red-400 transition-colors duration-300"
+          href="#hero"
+          className="text-sm text-gray-300 hover:text-purple-400 transition-colors duration-300"
         >
           ↑ Back to top
         </a>
